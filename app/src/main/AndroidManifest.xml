@@ -13,7 +13,6 @@
         android:theme="@style/Theme.Dolfin_Expenese_Tracker_App"
         tools:targetApi="31">
         <activity
-<<<<<<< HEAD
             android:name=".Statistic"
             android:exported="false"
             android:parentActivityName=".MainActivity">
@@ -22,8 +21,6 @@
                 android:value="" />
         </activity>
         <activity
-=======
->>>>>>> ac4db1ec389283838473d116cd7a4db778460309
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

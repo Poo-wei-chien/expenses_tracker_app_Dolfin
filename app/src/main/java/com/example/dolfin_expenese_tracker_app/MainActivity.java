@@ -1,6 +1,5 @@
 package com.example.dolfin_expenese_tracker_app;
 
-<<<<<<< HEAD
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,6 +14,8 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -25,30 +26,24 @@ public class MainActivity extends AppCompatActivity {
     FirebaseFirestore firestore;
 
     @SuppressLint("MissingInflatedId")
-=======
-import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
 
->>>>>>> ac4db1ec389283838473d116cd7a4db778460309
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-<<<<<<< HEAD
-        button = findViewById(R.id.button);
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_main);
+            button = findViewById(R.id.button);
 
-        firestore = FirebaseFirestore.getInstance();
+            firestore = FirebaseFirestore.getInstance();
 
-        setTitle("Home");
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, Statistic.class));
-            }
-        });
+            setTitle("Home");
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    startActivity(new Intent(MainActivity.this, Statistic.class));
+                }
+            });
 
 /*        Map<String, Object> users = new HashMap<>();
         users.put("firstName","Easy");
@@ -67,7 +62,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 */
-=======
->>>>>>> ac4db1ec389283838473d116cd7a4db778460309
+
+        }
     }
-}
