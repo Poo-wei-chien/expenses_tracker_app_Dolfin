@@ -1,16 +1,27 @@
 plugins {
     id 'com.android.application'
+<<<<<<< HEAD
     id 'com.google.gms.google-services'
+=======
+>>>>>>> ac4db1ec389283838473d116cd7a4db778460309
 }
 
 android {
     namespace 'com.example.dolfin_expenese_tracker_app'
+<<<<<<< HEAD
     compileSdk 33
+=======
+    compileSdk 32
+>>>>>>> ac4db1ec389283838473d116cd7a4db778460309
 
     defaultConfig {
         applicationId "com.example.dolfin_expenese_tracker_app"
         minSdk 21
+<<<<<<< HEAD
         targetSdk 33
+=======
+        targetSdk 32
+>>>>>>> ac4db1ec389283838473d116cd7a4db778460309
         versionCode 1
         versionName "1.0"
 
@@ -23,6 +34,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+<<<<<<< HEAD
 /*    compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -42,6 +54,12 @@ android {
     }
 */
 
+=======
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+>>>>>>> ac4db1ec389283838473d116cd7a4db778460309
 }
 
 dependencies {
@@ -49,6 +67,7 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.5.1'
     implementation 'com.google.android.material:material:1.7.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+<<<<<<< HEAD
     //noinspection GradleDependency
     implementation 'com.google.firebase:firebase-firestore:24.4.1'
     testImplementation 'junit:junit:4.13.2'
@@ -65,4 +84,9 @@ dependencies {
 
     // Add the dependencies for any other desired Firebase products
     // https://firebase.google.com/docs/android/setup#available-libraries
+=======
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.4'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
+>>>>>>> ac4db1ec389283838473d116cd7a4db778460309
 }
