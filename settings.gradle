@@ -10,7 +10,8 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-    }
+        maven { url 'https://jitpack.io' }    }
+
 }
 rootProject.name = "Dolfin_Expenese_Tracker_App"
 include ':app'

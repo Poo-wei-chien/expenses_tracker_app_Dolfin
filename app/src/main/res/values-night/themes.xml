@@ -2,8 +2,8 @@
     <!-- Base application theme. -->
     <style name="Theme.Dolfin_Expenese_Tracker_App" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">#015794</item>
-        <item name="colorPrimaryVariant">#0291BC</item>
+        <item name="colorPrimary">@color/blue_700</item>
+        <item name="colorPrimaryVariant">@color/blue_500</item>
         <item name="colorOnPrimary">@color/black</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
