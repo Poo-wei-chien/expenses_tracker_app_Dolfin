@@ -1,84 +1,67 @@
 package com.example.dolfin_expenese_tracker_app;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Toast;
 
-import java.util.HashMap;
-//import com.google.firebase.firestore.DocumentReference;
-//import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
 
+import java.util.HashMap;
+import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
     Button button;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        setTitle("Expenses");
-        EditText edit_category = findViewById(R.id.txt_category);
-        EditText edit_name = findViewById(R.id.txt_name);
-        EditText edit_amount = findViewById(R.id.txt_amount);
-        EditText edit_date = findViewById(R.id.txt_date);
-        EditText edit_invoice = findViewById(R.id.txt_invoice);
-        button = findViewById(R.id.btn_submit);
+    FirebaseFirestore firestore;
 
-/*        button.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, Statistic.class);
-            startActivity(intent);
-        });*/
+    @SuppressLint("MissingInflatedId")
 
-        //Set up edit button in menu bar
-        DAOExpenses dao = new DAOExpenses();
-        Expenses exp_edit = (Expenses) getIntent().getSerializableExtra("EDIT");
-        if (exp_edit != null) {
-            button.setText("UPDATE");
-            edit_category.setText(exp_edit.getCategory());
-            edit_name.setText(exp_edit.getName());
-            edit_amount.setText(exp_edit.getAmount());
-            edit_date.setText((CharSequence) exp_edit.getDate());
-            edit_invoice.setText(exp_edit.getInvoice());
-        } else {
-            button.setText("SUBMIT");
-        }
 
-        button.setOnClickListener(v ->
-        {
-            Intent intent = new Intent(MainActivity.this, Statistic_Activity.class);
-            startActivity(intent);
-            //Insert database
-            Expenses exp = null;
-            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-                exp = new Expenses(edit_category.getText().toString(), edit_name.getText().toString(), edit_amount.getText().toString(), edit_date.getText().toString(), edit_invoice.getText().toString());
+
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_main);
+            button = findViewById(R.id.button);
+
+            firestore = FirebaseFirestore.getInstance();
+
+            setTitle("Home");
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    startActivity(new Intent(MainActivity.this, Statistic.class));
+                }
+            });
+
+/*        Map<String, Object> users = new HashMap<>();
+        users.put("firstName","Easy");
+        users.put("lastname","Tuto");
+        users.put("description","Subscribe");
+
+        firestore.collection("users").add(users).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+            @Override
+            public void onSuccess(DocumentReference documentReference) {
+                Toast.makeText(MainActivity.this, "Success", Toast.LENGTH_SHORT).show();
             }
-            if (exp_edit == null) {
-                dao.add(exp).addOnSuccessListener(suc -> {
-                    Toast.makeText(this, "Record is inserted", Toast.LENGTH_SHORT).show();
-                }).addOnFailureListener(er -> {
-                    Toast.makeText(this, "" + er.getMessage(), Toast.LENGTH_SHORT).show();
-                });
-            } else {
-                //Update db manually
-                HashMap<String, Object> hashMap = new HashMap<>();
-                hashMap.put("category", edit_category.getText().toString());
-                hashMap.put("name", edit_name.getText().toString());
-                hashMap.put("amount", edit_amount.getText().toString());
-                hashMap.put("date", edit_date.getText().toString());
-                hashMap.put("invoice", edit_invoice.getText().toString());
-                dao.update(exp_edit.getKey(), hashMap).addOnSuccessListener(suc -> {
-                    Toast.makeText(this, "Record is updated", Toast.LENGTH_SHORT).show();
-                    finish();
-                }).addOnFailureListener(er -> {
-                    Toast.makeText(this, "" + er.getMessage(), Toast.LENGTH_SHORT).show();
-                });
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(MainActivity.this, "Failue", Toast.LENGTH_SHORT).show();
             }
-
         });
+*/
 
+        }
     }
-}

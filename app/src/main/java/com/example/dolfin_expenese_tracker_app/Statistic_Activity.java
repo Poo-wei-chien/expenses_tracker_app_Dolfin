@@ -76,7 +76,11 @@ public class Statistic_Activity extends AppCompatActivity {
                 ExpensesVH vh = (ExpensesVH) holder;
                 Expenses emp = (Expenses) model;
                 vh.txt_name.setText(emp.getName());
+<<<<<<< HEAD
                 vh.txt_date.setText((CharSequence) emp.getDate());
+=======
+                vh.txt_date.setText(emp.getDate());
+>>>>>>> 7bc07af (little bit update)
                 vh.txt_amount.setText(emp.getAmount());
                 vh.txt_option.setOnClickListener(v->{
                     PopupMenu popupMenu = new PopupMenu(Statistic_Activity.this, vh.txt_option);
@@ -111,6 +115,14 @@ public class Statistic_Activity extends AppCompatActivity {
                 View view = LayoutInflater.from(Statistic_Activity.this).inflate(R.layout.layout_item_rv, parent, false);
                 return new ExpensesVH(view);
             }
+<<<<<<< HEAD
+=======
+
+            @Override
+            public void onDataChanged() {
+                Toast.makeText(Statistic_Activity.this, "Data Changed", Toast.LENGTH_SHORT);
+            }
+>>>>>>> 7bc07af (little bit update)
         };
         recyclerView.setAdapter(adapter);
 
@@ -181,7 +193,10 @@ public class Statistic_Activity extends AppCompatActivity {
         pieChart.setEntryLabelTextSize(10f);
         pieChart.invalidate();
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7bc07af (little bit update)
         pieChart.animateY(1400, Easing.EaseInOutQuad);
     }
     
